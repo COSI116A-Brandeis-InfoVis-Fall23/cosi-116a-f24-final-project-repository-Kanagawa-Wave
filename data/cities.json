@@ -1,0 +1,1370 @@
+[
+    {
+        "code": 35620,
+        "location": "New York-Newark-Jersey City, NY-NJ-PA MSA",
+        "population": 8804190,
+        "income": 96463
+    },
+    {
+        "code": 31080,
+        "location": "Los Angeles-Long Beach-Anaheim, CA MSA",
+        "population": 3898747,
+        "income": 96463
+    },
+    {
+        "code": 16980,
+        "location": "Chicago-Naperville-Elgin, IL-IN-WI MSA",
+        "population": 2746388,
+        "income": 96463
+    },
+    {
+        "code": 26420,
+        "location": "Houston-The Woodlands-Sugar Land, TX MSA",
+        "population": 2304580,
+        "income": 96463
+    },
+    {
+        "code": 38060,
+        "location": "Phoenix-Mesa-Chandler, AZ MSA",
+        "population": 1608139,
+        "income": 96463
+    },
+    {
+        "code": 37980,
+        "location": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD MSA",
+        "population": 1603797,
+        "income": 96463
+    },
+    {
+        "code": 41700,
+        "location": "San Antonio-New Braunfels, TX MSA",
+        "population": 1434625,
+        "income": 96463
+    },
+    {
+        "code": 41740,
+        "location": "San Diego-Chula Vista-Carlsbad, CA MSA",
+        "population": 1386932,
+        "income": 96463
+    },
+    {
+        "code": 19100,
+        "location": "Dallas-Fort Worth-Arlington, TX MSA",
+        "population": 1304379,
+        "income": 96463
+    },
+    {
+        "code": 27260,
+        "location": "Jacksonville, FL MSA",
+        "population": 949611,
+        "income": 96463
+    },
+    {
+        "code": 12420,
+        "location": "Austin-Round Rock-Georgetown, TX MSA",
+        "population": 961855,
+        "income": 96463
+    },
+    {
+        "code": 19100,
+        "location": "Dallas-Fort Worth-Arlington, TX MSA",
+        "population": 918915,
+        "income": 96463
+    },
+    {
+        "code": 41940,
+        "location": "San Jose-Sunnyvale-Santa Clara, CA MSA",
+        "population": 1013240,
+        "income": 96463
+    },
+    {
+        "code": 18140,
+        "location": "Columbus, OH MSA",
+        "population": 905748,
+        "income": 96463
+    },
+    {
+        "code": 16740,
+        "location": "Charlotte-Concord-Gastonia, NC-SC MSA",
+        "population": 874579,
+        "income": 96463
+    },
+    {
+        "code": 26900,
+        "location": "Indianapolis-Carmel-Anderson, IN MSA",
+        "population": 887642,
+        "income": 96463
+    },
+    {
+        "code": 41860,
+        "location": "San Francisco-Oakland-Berkeley, CA MSA",
+        "population": 873965,
+        "income": 96463
+    },
+    {
+        "code": 42660,
+        "location": "Seattle-Tacoma-Bellevue, WA MSA",
+        "population": 737015,
+        "income": 96463
+    },
+    {
+        "code": 19740,
+        "location": "Denver-Aurora-Lakewood, CO MSA",
+        "population": 715522,
+        "income": 96463
+    },
+    {
+        "code": 36420,
+        "location": "Oklahoma City, OK MSA",
+        "population": 681054,
+        "income": 96463
+    },
+    {
+        "code": 34980,
+        "location": "Nashville-Davidson--Murfreesboro--Franklin, TN MSA",
+        "population": 689447,
+        "income": 96463
+    },
+    {
+        "code": 47900,
+        "location": "Washington-Arlington-Alexandria, DC-VA-MD-WV MSA",
+        "population": 689545,
+        "income": 96463
+    },
+    {
+        "code": 21340,
+        "location": "El Paso, TX MSA",
+        "population": 678815,
+        "income": 96463
+    },
+    {
+        "code": 29820,
+        "location": "Las Vegas-Henderson-Paradise, NV MSA",
+        "population": 641903,
+        "income": 96463
+    },
+    {
+        "code": 14460,
+        "location": "Boston-Cambridge-Newton, MA-NH MSA",
+        "population": 675647,
+        "income": 96463
+    },
+    {
+        "code": 19820,
+        "location": "Detroit-Warren-Dearborn, MI MSA",
+        "population": 639111,
+        "income": 96463
+    },
+    {
+        "code": 38860,
+        "location": "Portland-South Portland, ME MSA",
+        "population": 652503,
+        "income": 96463
+    },
+    {
+        "code": 38900,
+        "location": "Portland-Vancouver-Hillsboro, OR-WA MSA",
+        "population": 652503,
+        "income": 96463
+    },
+    {
+        "code": 31140,
+        "location": "Louisville/Jefferson County, KY-IN MSA",
+        "population": 633045,
+        "income": 96463
+    },
+    {
+        "code": 32820,
+        "location": "Memphis, TN-MS-AR MSA",
+        "population": 633104,
+        "income": 96463
+    },
+    {
+        "code": 12580,
+        "location": "Baltimore-Columbia-Towson, MD MSA",
+        "population": 585708,
+        "income": 96463
+    },
+    {
+        "code": 33340,
+        "location": "Milwaukee-Waukesha, WI MSA",
+        "population": 577222,
+        "income": 96463
+    },
+    {
+        "code": 10740,
+        "location": "Albuquerque, NM MSA",
+        "population": 564559,
+        "income": 96463
+    },
+    {
+        "code": 46060,
+        "location": "Tucson, AZ MSA",
+        "population": 542629,
+        "income": 96463
+    },
+    {
+        "code": 23420,
+        "location": "Fresno, CA MSA",
+        "population": 542107,
+        "income": 96463
+    },
+    {
+        "code": 40900,
+        "location": "Sacramento-Roseville-Folsom, CA MSA",
+        "population": 524943,
+        "income": 96463
+    },
+    {
+        "code": 38060,
+        "location": "Phoenix-Mesa-Chandler, AZ MSA",
+        "population": 504258,
+        "income": 96463
+    },
+    {
+        "code": 12060,
+        "location": "Atlanta-Sandy Springs-Alpharetta, GA MSA",
+        "population": 498715,
+        "income": 96463
+    },
+    {
+        "code": 28140,
+        "location": "Kansas City, MO-KS MSA",
+        "population": 508090,
+        "income": 96463
+    },
+    {
+        "code": 17820,
+        "location": "Colorado Springs, CO MSA",
+        "population": 478961,
+        "income": 96463
+    },
+    {
+        "code": 36540,
+        "location": "Omaha-Council Bluffs, NE-IA MSA",
+        "population": 486051,
+        "income": 96463
+    },
+    {
+        "code": 39580,
+        "location": "Raleigh-Cary, NC MSA",
+        "population": 467665,
+        "income": 96463
+    },
+    {
+        "code": 33100,
+        "location": "Miami-Fort Lauderdale-Pompano Beach, FL MSA",
+        "population": 442241,
+        "income": 96463
+    },
+    {
+        "code": 47260,
+        "location": "Virginia Beach-Norfolk-Newport News, VA-NC MSA",
+        "population": 459470,
+        "income": 96463
+    },
+    {
+        "code": 31080,
+        "location": "Los Angeles-Long Beach-Anaheim, CA MSA",
+        "population": 466742,
+        "income": 96463
+    },
+    {
+        "code": 41860,
+        "location": "San Francisco-Oakland-Berkeley, CA MSA",
+        "population": 440646,
+        "income": 96463
+    },
+    {
+        "code": 33460,
+        "location": "Minneapolis-St. Paul-Bloomington, MN-WI MSA",
+        "population": 429954,
+        "income": 96463
+    },
+    {
+        "code": 12540,
+        "location": "Bakersfield, CA MSA",
+        "population": 403455,
+        "income": 96463
+    },
+    {
+        "code": 46140,
+        "location": "Tulsa, OK MSA",
+        "population": 413066,
+        "income": 96463
+    },
+    {
+        "code": 45300,
+        "location": "Tampa-St. Petersburg-Clearwater, FL MSA",
+        "population": 384959,
+        "income": 96463
+    },
+    {
+        "code": 19100,
+        "location": "Dallas-Fort Worth-Arlington, TX MSA",
+        "population": 394266,
+        "income": 96463
+    },
+    {
+        "code": 48620,
+        "location": "Wichita, KS MSA",
+        "population": 397532,
+        "income": 96463
+    },
+    {
+        "code": 19740,
+        "location": "Denver-Aurora-Lakewood, CO MSA",
+        "population": 386261,
+        "income": 96463
+    },
+    {
+        "code": 35380,
+        "location": "New Orleans-Metairie, LA MSA",
+        "population": 383997,
+        "income": 96463
+    },
+    {
+        "code": 17460,
+        "location": "Cleveland-Elyria, OH MSA",
+        "population": 372624,
+        "income": 96463
+    },
+    {
+        "code": 46520,
+        "location": "Urban Honolulu, HI MSA",
+        "population": 350964,
+        "income": 96463
+    },
+    {
+        "code": 31080,
+        "location": "Los Angeles-Long Beach-Anaheim, CA MSA",
+        "population": 346824,
+        "income": 96463
+    },
+    {
+        "code": 29820,
+        "location": "Las Vegas-Henderson-Paradise, NV MSA",
+        "population": 317610,
+        "income": 96463
+    },
+    {
+        "code": 36740,
+        "location": "Orlando-Kissimmee-Sanford, FL MSA",
+        "population": 307573,
+        "income": 96463
+    },
+    {
+        "code": 30460,
+        "location": "Lexington-Fayette, KY MSA",
+        "population": 322570,
+        "income": 96463
+    },
+    {
+        "code": 44700,
+        "location": "Stockton, CA MSA",
+        "population": 320804,
+        "income": 96463
+    },
+    {
+        "code": 40140,
+        "location": "Riverside-San Bernardino-Ontario, CA MSA",
+        "population": 314998,
+        "income": 96463
+    },
+    {
+        "code": 18580,
+        "location": "Corpus Christi, TX MSA",
+        "population": 317863,
+        "income": 96463
+    },
+    {
+        "code": 17140,
+        "location": "Cincinnati, OH-KY-IN MSA",
+        "population": 309317,
+        "income": 96463
+    },
+    {
+        "code": 35620,
+        "location": "New York-Newark-Jersey City, NY-NJ-PA MSA",
+        "population": 311549,
+        "income": 96463
+    },
+    {
+        "code": 38300,
+        "location": "Pittsburgh, PA MSA",
+        "population": 302971,
+        "income": 96463
+    },
+    {
+        "code": 24660,
+        "location": "Greensboro-High Point, NC MSA",
+        "population": 299035,
+        "income": 96463
+    },
+    {
+        "code": 20500,
+        "location": "Durham-Chapel Hill, NC MSA",
+        "population": 283506,
+        "income": 96463
+    },
+    {
+        "code": 30700,
+        "location": "Lincoln, NE MSA",
+        "population": 291082,
+        "income": 96463
+    },
+    {
+        "code": 35620,
+        "location": "New York-Newark-Jersey City, NY-NJ-PA MSA",
+        "population": 292449,
+        "income": 96463
+    },
+    {
+        "code": 11260,
+        "location": "Anchorage, AK MSA",
+        "population": 291247,
+        "income": 96463
+    },
+    {
+        "code": 41180,
+        "location": "St. Louis, MO-IL MSA",
+        "population": 301578,
+        "income": 96463
+    },
+    {
+        "code": 31540,
+        "location": "Madison, WI MSA",
+        "population": 269840,
+        "income": 96463
+    },
+    {
+        "code": 38060,
+        "location": "Phoenix-Mesa-Chandler, AZ MSA",
+        "population": 275987,
+        "income": 96463
+    },
+    {
+        "code": 39900,
+        "location": "Reno, NV MSA",
+        "population": 264165,
+        "income": 96463
+    },
+    {
+        "code": 15380,
+        "location": "Buffalo-Cheektowaga, NY MSA",
+        "population": 278349,
+        "income": 96463
+    },
+    {
+        "code": 41740,
+        "location": "San Diego-Chula Vista-Carlsbad, CA MSA",
+        "population": 275487,
+        "income": 96463
+    },
+    {
+        "code": 23060,
+        "location": "Fort Wayne, IN MSA",
+        "population": 263886,
+        "income": 96463
+    },
+    {
+        "code": 31180,
+        "location": "Lubbock, TX MSA",
+        "population": 257141,
+        "income": 96463
+    },
+    {
+        "code": 45780,
+        "location": "Toledo, OH MSA",
+        "population": 270871,
+        "income": 96463
+    },
+    {
+        "code": 45300,
+        "location": "Tampa-St. Petersburg-Clearwater, FL MSA",
+        "population": 258308,
+        "income": 96463
+    },
+    {
+        "code": 29700,
+        "location": "Laredo, TX MSA",
+        "population": 255205,
+        "income": 96463
+    },
+    {
+        "code": 49180,
+        "location": "Winston-Salem, NC MSA",
+        "population": 249545,
+        "income": 96463
+    },
+    {
+        "code": 38940,
+        "location": "Port St. Lucie, FL MSA",
+        "population": 204851,
+        "income": 96463
+    },
+    {
+        "code": 14260,
+        "location": "Boise City, ID MSA",
+        "population": 235684,
+        "income": 96463
+    },
+    {
+        "code": 47260,
+        "location": "Virginia Beach-Norfolk-Newport News, VA-NC MSA",
+        "population": 238005,
+        "income": 96463
+    },
+    {
+        "code": 44060,
+        "location": "Spokane-Spokane Valley, WA MSA",
+        "population": 228989,
+        "income": 96463
+    },
+    {
+        "code": 40060,
+        "location": "Richmond, VA MSA",
+        "population": 226610,
+        "income": 96463
+    },
+    {
+        "code": 26620,
+        "location": "Huntsville, AL MSA",
+        "population": 215006,
+        "income": 96463
+    },
+    {
+        "code": 15980,
+        "location": "Cape Coral-Fort Myers, FL MSA",
+        "population": 194016,
+        "income": 96463
+    },
+    {
+        "code": 40140,
+        "location": "Riverside-San Bernardino-Ontario, CA MSA",
+        "population": 222101,
+        "income": 96463
+    },
+    {
+        "code": 42660,
+        "location": "Seattle-Tacoma-Bellevue, WA MSA",
+        "population": 219346,
+        "income": 96463
+    },
+    {
+        "code": 12940,
+        "location": "Baton Rouge, LA MSA",
+        "population": 227470,
+        "income": 96463
+    },
+    {
+        "code": 33700,
+        "location": "Modesto, CA MSA",
+        "population": 218464,
+        "income": 96463
+    },
+    {
+        "code": 19780,
+        "location": "Des Moines-West Des Moines, IA MSA",
+        "population": 214133,
+        "income": 96463
+    },
+    {
+        "code": 22180,
+        "location": "Fayetteville, NC MSA",
+        "population": 208501,
+        "income": 96463
+    },
+    {
+        "code": 41620,
+        "location": "Salt Lake City, UT MSA",
+        "population": 199723,
+        "income": 96463
+    },
+    {
+        "code": 49340,
+        "location": "Worcester, MA-CT MSA",
+        "population": 206518,
+        "income": 96463
+    },
+    {
+        "code": 40380,
+        "location": "Rochester, NY MSA",
+        "population": 211328,
+        "income": 96463
+    },
+    {
+        "code": 43620,
+        "location": "Sioux Falls, SD MSA",
+        "population": 192517,
+        "income": 96463
+    },
+    {
+        "code": 30780,
+        "location": "Little Rock-North Little Rock-Conway, AR MSA",
+        "population": 202591,
+        "income": 96463
+    },
+    {
+        "code": 11100,
+        "location": "Amarillo, TX MSA",
+        "population": 200393,
+        "income": 96463
+    },
+    {
+        "code": 45220,
+        "location": "Tallahassee, FL MSA",
+        "population": 196169,
+        "income": 96463
+    },
+    {
+        "code": 17980,
+        "location": "Columbus, GA-AL MSA",
+        "population": 206922,
+        "income": 96463
+    },
+    {
+        "code": 12260,
+        "location": "Augusta-Richmond County, GA-SC MSA",
+        "population": 202081,
+        "income": 96463
+    },
+    {
+        "code": 37100,
+        "location": "Oxnard-Thousand Oaks-Ventura, CA MSA",
+        "population": 202063,
+        "income": 96463
+    },
+    {
+        "code": 28940,
+        "location": "Knoxville, TN MSA",
+        "population": 190740,
+        "income": 96463
+    },
+    {
+        "code": 13820,
+        "location": "Birmingham-Hoover, AL MSA",
+        "population": 200733,
+        "income": 96463
+    },
+    {
+        "code": 24340,
+        "location": "Grand Rapids-Kentwood, MI MSA",
+        "population": 198917,
+        "income": 96463
+    },
+    {
+        "code": 38900,
+        "location": "Portland-Vancouver-Hillsboro, OR-WA MSA",
+        "population": 190915,
+        "income": 96463
+    },
+    {
+        "code": 33860,
+        "location": "Montgomery, AL MSA",
+        "population": 200603,
+        "income": 96463
+    },
+    {
+        "code": 39300,
+        "location": "Providence-Warwick, RI-MA MSA",
+        "population": 190934,
+        "income": 96463
+    },
+    {
+        "code": 15180,
+        "location": "Brownsville-Harlingen, TX MSA",
+        "population": 186738,
+        "income": 96463
+    },
+    {
+        "code": 10420,
+        "location": "Akron, OH MSA",
+        "population": 190469,
+        "income": 96463
+    },
+    {
+        "code": 16860,
+        "location": "Chattanooga, TN-GA MSA",
+        "population": 181099,
+        "income": 96463
+    },
+    {
+        "code": 33100,
+        "location": "Miami-Fort Lauderdale-Pompano Beach, FL MSA",
+        "population": 182760,
+        "income": 96463
+    },
+    {
+        "code": 47260,
+        "location": "Virginia Beach-Norfolk-Newport News, VA-NC MSA",
+        "population": 186247,
+        "income": 96463
+    },
+    {
+        "code": 33660,
+        "location": "Mobile, AL MSA",
+        "population": 187041,
+        "income": 96463
+    },
+    {
+        "code": 40140,
+        "location": "Riverside-San Bernardino-Ontario, CA MSA",
+        "population": 175265,
+        "income": 96463
+    },
+    {
+        "code": 17300,
+        "location": "Clarksville, TN-KY MSA",
+        "population": 166722,
+        "income": 96463
+    },
+    {
+        "code": 39580,
+        "location": "Raleigh-Cary, NC MSA",
+        "population": 174721,
+        "income": 96463
+    },
+    {
+        "code": 43340,
+        "location": "Shreveport-Bossier City, LA MSA",
+        "population": 187593,
+        "income": 96463
+    },
+    {
+        "code": 21660,
+        "location": "Eugene-Springfield, OR MSA",
+        "population": 176654,
+        "income": 96463
+    },
+    {
+        "code": 41420,
+        "location": "Salem, OR MSA",
+        "population": 175535,
+        "income": 96463
+    },
+    {
+        "code": 42220,
+        "location": "Santa Rosa-Petaluma, CA MSA",
+        "population": 178127,
+        "income": 96463
+    },
+    {
+        "code": 22660,
+        "location": "Fort Collins, CO MSA",
+        "population": 169810,
+        "income": 96463
+    },
+    {
+        "code": 44180,
+        "location": "Springfield, MO MSA",
+        "population": 169176,
+        "income": 96463
+    },
+    {
+        "code": 29540,
+        "location": "Lancaster, PA MSA",
+        "population": 173516,
+        "income": 96463
+    },
+    {
+        "code": 34980,
+        "location": "Nashville-Davidson--Murfreesboro--Franklin, TN MSA",
+        "population": 152769,
+        "income": 96463
+    },
+    {
+        "code": 28660,
+        "location": "Killeen-Temple, TX MSA",
+        "population": 153095,
+        "income": 96463
+    },
+    {
+        "code": 41500,
+        "location": "Salinas, CA MSA",
+        "population": 163542,
+        "income": 96463
+    },
+    {
+        "code": 40900,
+        "location": "Sacramento-Roseville-Folsom, CA MSA",
+        "population": 147773,
+        "income": 96463
+    },
+    {
+        "code": 31420,
+        "location": "Macon-Bibb County, GA MSA",
+        "population": 157346,
+        "income": 96463
+    },
+    {
+        "code": 19740,
+        "location": "Denver-Aurora-Lakewood, CO MSA",
+        "population": 155984,
+        "income": 96463
+    },
+    {
+        "code": 16700,
+        "location": "Charleston-North Charleston, SC MSA",
+        "population": 150227,
+        "income": 96463
+    },
+    {
+        "code": 47900,
+        "location": "Washington-Arlington-Alexandria, DC-VA-MD-WV MSA",
+        "population": 159467,
+        "income": 96463
+    },
+    {
+        "code": 44140,
+        "location": "Springfield, MA MSA",
+        "population": 155929,
+        "income": 96463
+    },
+    {
+        "code": 28140,
+        "location": "Kansas City, MO-KS MSA",
+        "population": 156607,
+        "income": 96463
+    },
+    {
+        "code": 41940,
+        "location": "San Jose-Sunnyvale-Santa Clara, CA MSA",
+        "population": 155805,
+        "income": 96463
+    },
+    {
+        "code": 42660,
+        "location": "Seattle-Tacoma-Bellevue, WA MSA",
+        "population": 151854,
+        "income": 96463
+    },
+    {
+        "code": 16980,
+        "location": "Chicago-Naperville-Elgin, IL-IN-WI MSA",
+        "population": 149540,
+        "income": 96463
+    },
+    {
+        "code": 14860,
+        "location": "Bridgeport-Stamford-Norwalk, CT MSA",
+        "population": 148654,
+        "income": 96463
+    },
+    {
+        "code": 42340,
+        "location": "Savannah, GA MSA",
+        "population": 147780,
+        "income": 96463
+    },
+    {
+        "code": 32580,
+        "location": "McAllen-Edinburg-Mission, TX MSA",
+        "population": 142210,
+        "income": 96463
+    },
+    {
+        "code": 40420,
+        "location": "Rockford, IL MSA",
+        "population": 148655,
+        "income": 96463
+    },
+    {
+        "code": 23540,
+        "location": "Gainesville, FL MSA",
+        "population": 141085,
+        "income": 96463
+    },
+    {
+        "code": 45060,
+        "location": "Syracuse, NY MSA",
+        "population": 148620,
+        "income": 96463
+    },
+    {
+        "code": 47300,
+        "location": "Visalia, CA MSA",
+        "population": 141384,
+        "income": 96463
+    },
+    {
+        "code": 47380,
+        "location": "Waco, TX MSA",
+        "population": 138486,
+        "income": 96463
+    },
+    {
+        "code": 27100,
+        "location": "Jackson, MI MSA",
+        "population": 153701,
+        "income": 96463
+    },
+    {
+        "code": 27140,
+        "location": "Jackson, MS MSA",
+        "population": 153701,
+        "income": 96463
+    },
+    {
+        "code": 27180,
+        "location": "Jackson, TN MSA",
+        "population": 153701,
+        "income": 96463
+    },
+    {
+        "code": 27260,
+        "location": "Jacksonville, FL MSA",
+        "population": 153701,
+        "income": 96463
+    },
+    {
+        "code": 27340,
+        "location": "Jacksonville, NC MSA",
+        "population": 153701,
+        "income": 96463
+    },
+    {
+        "code": 17900,
+        "location": "Columbia, SC MSA",
+        "population": 136632,
+        "income": 96463
+    },
+    {
+        "code": 33260,
+        "location": "Midland, TX MSA",
+        "population": 132524,
+        "income": 96463
+    },
+    {
+        "code": 19820,
+        "location": "Detroit-Warren-Dearborn, MI MSA",
+        "population": 139387,
+        "income": 96463
+    },
+    {
+        "code": 14860,
+        "location": "Bridgeport-Stamford-Norwalk, CT MSA",
+        "population": 135470,
+        "income": 96463
+    },
+    {
+        "code": 16300,
+        "location": "Cedar Rapids, IA MSA",
+        "population": 137710,
+        "income": 96463
+    },
+    {
+        "code": 37340,
+        "location": "Palm Bay-Melbourne-Titusville, FL MSA",
+        "population": 119760,
+        "income": 96463
+    },
+    {
+        "code": 19430,
+        "location": "Dayton-Kettering, OH MSA",
+        "population": 137644,
+        "income": 96463
+    },
+    {
+        "code": 35300,
+        "location": "New Haven-Milford, CT MSA",
+        "population": 134023,
+        "income": 96463
+    },
+    {
+        "code": 22020,
+        "location": "Fargo, ND-MN MSA",
+        "population": 125990,
+        "income": 96463
+    },
+    {
+        "code": 41940,
+        "location": "San Jose-Sunnyvale-Santa Clara, CA MSA",
+        "population": 127647,
+        "income": 96463
+    },
+    {
+        "code": 12420,
+        "location": "Austin-Round Rock-Georgetown, TX MSA",
+        "population": 119468,
+        "income": 96463
+    },
+    {
+        "code": 12580,
+        "location": "Baltimore-Columbia-Towson, MD MSA",
+        "population": 126254,
+        "income": 96463
+    },
+    {
+        "code": 17860,
+        "location": "Columbia, MO MSA",
+        "population": 126254,
+        "income": 96463
+    },
+    {
+        "code": 10180,
+        "location": "Abilene, TX MSA",
+        "population": 125182,
+        "income": 96463
+    },
+    {
+        "code": 12020,
+        "location": "Athens-Clarke County, GA MSA",
+        "population": 127315,
+        "income": 96463
+    },
+    {
+        "code": 45820,
+        "location": "Topeka, KS MSA",
+        "population": 126587,
+        "income": 96463
+    },
+    {
+        "code": 17780,
+        "location": "College Station-Bryan, TX MSA",
+        "population": 120511,
+        "income": 96463
+    },
+    {
+        "code": 10900,
+        "location": "Allentown-Bethlehem-Easton, PA-NJ MSA",
+        "population": 125845,
+        "income": 96463
+    },
+    {
+        "code": 37100,
+        "location": "Oxnard-Thousand Oaks-Ventura, CA MSA",
+        "population": 126966,
+        "income": 96463
+    },
+    {
+        "code": 46700,
+        "location": "Vallejo, CA MSA",
+        "population": 126090,
+        "income": 96463
+    },
+    {
+        "code": 48900,
+        "location": "Wilmington, NC MSA",
+        "population": 115451,
+        "income": 96463
+    },
+    {
+        "code": 40340,
+        "location": "Rochester, MN MSA",
+        "population": 121395,
+        "income": 96463
+    },
+    {
+        "code": 29460,
+        "location": "Lakeland-Winter Haven, FL MSA",
+        "population": 112641,
+        "income": 96463
+    },
+    {
+        "code": 16700,
+        "location": "Charleston-North Charleston, SC MSA",
+        "population": 114852,
+        "income": 96463
+    },
+    {
+        "code": 29180,
+        "location": "Lafayette, LA MSA",
+        "population": 121374,
+        "income": 96463
+    },
+    {
+        "code": 29200,
+        "location": "Lafayette-West Lafayette, IN MSA",
+        "population": 121374,
+        "income": 96463
+    },
+    {
+        "code": 13740,
+        "location": "Billings, MT MSA",
+        "population": 117116,
+        "income": 96463
+    },
+    {
+        "code": 25540,
+        "location": "Hartford-East Hartford-Middletown, CT MSA",
+        "population": 121054,
+        "income": 96463
+    },
+    {
+        "code": 11460,
+        "location": "Ann Arbor, MI MSA",
+        "population": 123851,
+        "income": 96463
+    },
+    {
+        "code": 41860,
+        "location": "San Francisco-Oakland-Berkeley, CA MSA",
+        "population": 124321,
+        "income": 96463
+    },
+    {
+        "code": 14460,
+        "location": "Boston-Cambridge-Newton, MA-NH MSA",
+        "population": 118403,
+        "income": 96463
+    },
+    {
+        "code": 24660,
+        "location": "Greensboro-High Point, NC MSA",
+        "population": 114059,
+        "income": 96463
+    },
+    {
+        "code": 45300,
+        "location": "Tampa-St. Petersburg-Clearwater, FL MSA",
+        "population": 117292,
+        "income": 96463
+    },
+    {
+        "code": 36220,
+        "location": "Odessa, TX MSA",
+        "population": 114428,
+        "income": 96463
+    },
+    {
+        "code": 31700,
+        "location": "Manchester-Nashua, NH MSA",
+        "population": 115644,
+        "income": 96463
+    },
+    {
+        "code": 21780,
+        "location": "Evansville, IN-KY MSA",
+        "population": 117298,
+        "income": 96463
+    },
+    {
+        "code": 29740,
+        "location": "Las Cruces, NM MSA",
+        "population": 111385,
+        "income": 96463
+    },
+    {
+        "code": 33100,
+        "location": "Miami-Fort Lauderdale-Pompano Beach, FL MSA",
+        "population": 112046,
+        "income": 96463
+    },
+    {
+        "code": 41740,
+        "location": "San Diego-Chula Vista-Carlsbad, CA MSA",
+        "population": 114746,
+        "income": 96463
+    },
+    {
+        "code": 39340,
+        "location": "Provo-Orem, UT MSA",
+        "population": 115162,
+        "income": 96463
+    },
+    {
+        "code": 16980,
+        "location": "Chicago-Naperville-Elgin, IL-IN-WI MSA",
+        "population": 114797,
+        "income": 96463
+    },
+    {
+        "code": 24540,
+        "location": "Greeley, CO MSA",
+        "population": 108795,
+        "income": 96463
+    },
+    {
+        "code": 44100,
+        "location": "Springfield, IL MSA",
+        "population": 114394,
+        "income": 96463
+    },
+    {
+        "code": 13140,
+        "location": "Beaumont-Port Arthur, TX MSA",
+        "population": 115282,
+        "income": 96463
+    },
+    {
+        "code": 29620,
+        "location": "Lansing-East Lansing, MI MSA",
+        "population": 112644,
+        "income": 96463
+    },
+    {
+        "code": 32580,
+        "location": "McAllen-Edinburg-Mission, TX MSA",
+        "population": 104627,
+        "income": 96463
+    },
+    {
+        "code": 46220,
+        "location": "Tuscaloosa, AL MSA",
+        "population": 99600,
+        "income": 96463
+    },
+    {
+        "code": 39380,
+        "location": "Pueblo, CO MSA",
+        "population": 111876,
+        "income": 96463
+    },
+    {
+        "code": 41700,
+        "location": "San Antonio-New Braunfels, TX MSA",
+        "population": 90403,
+        "income": 96463
+    },
+    {
+        "code": 37900,
+        "location": "Peoria, IL MSA",
+        "population": 113150,
+        "income": 96463
+    },
+    {
+        "code": 46340,
+        "location": "Tyler, TX MSA",
+        "population": 105995,
+        "income": 96463
+    },
+    {
+        "code": 16740,
+        "location": "Charlotte-Concord-Gastonia, NC-SC MSA",
+        "population": 105240,
+        "income": 96463
+    },
+    {
+        "code": 42200,
+        "location": "Santa Maria-Santa Barbara, CA MSA",
+        "population": 109707,
+        "income": 96463
+    },
+    {
+        "code": 37100,
+        "location": "Oxnard-Thousand Oaks-Ventura, CA MSA",
+        "population": 110763,
+        "income": 96463
+    },
+    {
+        "code": 26420,
+        "location": "Houston-The Woodlands-Sugar Land, TX MSA",
+        "population": 111026,
+        "income": 96463
+    },
+    {
+        "code": 44060,
+        "location": "Spokane-Spokane Valley, WA MSA",
+        "population": 102976,
+        "income": 96463
+    },
+    {
+        "code": 38900,
+        "location": "Portland-Vancouver-Hillsboro, OR-WA MSA",
+        "population": 106447,
+        "income": 96463
+    },
+    {
+        "code": 14500,
+        "location": "Boulder, CO MSA",
+        "population": 108250,
+        "income": 96463
+    },
+    {
+        "code": 19820,
+        "location": "Detroit-Warren-Dearborn, MI MSA",
+        "population": 109976,
+        "income": 96463
+    },
+    {
+        "code": 32580,
+        "location": "McAllen-Edinburg-Mission, TX MSA",
+        "population": 100243,
+        "income": 96463
+    },
+    {
+        "code": 12060,
+        "location": "Atlanta-Sandy Springs-Alpharetta, GA MSA",
+        "population": 108080,
+        "income": 96463
+    },
+    {
+        "code": 24580,
+        "location": "Green Bay, WI MSA",
+        "population": 107395,
+        "income": 96463
+    },
+    {
+        "code": 41100,
+        "location": "St. George, UT MSA",
+        "population": 95342,
+        "income": 96463
+    },
+    {
+        "code": 13460,
+        "location": "Bend, OR MSA",
+        "population": 99178,
+        "income": 96463
+    },
+    {
+        "code": 43780,
+        "location": "South Bend-Mishawaka, IN-MI MSA",
+        "population": 103453,
+        "income": 96463
+    },
+    {
+        "code": 48660,
+        "location": "Wichita Falls, TX MSA",
+        "population": 102316,
+        "income": 96463
+    },
+    {
+        "code": 26900,
+        "location": "Indianapolis-Carmel-Anderson, IN MSA",
+        "population": 99757,
+        "income": 96463
+    },
+    {
+        "code": 22220,
+        "location": "Fayetteville-Springdale-Rogers, AR MSA",
+        "population": 93949,
+        "income": 96463
+    },
+    {
+        "code": 17020,
+        "location": "Chico, CA MSA",
+        "population": 101475,
+        "income": 96463
+    },
+    {
+        "code": 10500,
+        "location": "Albany, GA MSA",
+        "population": 99224,
+        "income": 96463
+    },
+    {
+        "code": 10540,
+        "location": "Albany-Lebanon, OR MSA",
+        "population": 99224,
+        "income": 96463
+    },
+    {
+        "code": 10580,
+        "location": "Albany-Schenectady-Troy, NY MSA",
+        "population": 99224,
+        "income": 96463
+    },
+    {
+        "code": 49740,
+        "location": "Yuma, AZ MSA",
+        "population": 95548,
+        "income": 96463
+    },
+    {
+        "code": 19340,
+        "location": "Davenport-Moline-Rock Island, IA-IL MSA",
+        "population": 101724,
+        "income": 96463
+    }
+]
