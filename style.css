@@ -77,3 +77,38 @@ h1, h2, h3 {
 		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
 	}
 }
+
+  /* Styling for the legend */
+#scatterplot g.legend text {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+  }
+  
+  #scatterplot g.legend circle {
+	stroke: black;
+	stroke-width: 1px;
+  }
+  
+  /* Optional: Hover effects for legend */
+  #scatterplot g.legend text:hover {
+	font-weight: bold;
+	fill: darkgray; /* Change color on hover */
+	cursor: pointer;
+  }
+  
+  #scatterplot g.legend circle:hover {
+	stroke-width: 2px; /* Thicker border on hover */
+	cursor: pointer;
+  }
+  
+  /* Responsive adjustments for legend */
+  @media (max-width: 768px) {
+	#scatterplot g.legend {
+	  transform: translate(0px, 0px); /* Reposition legend for smaller screens */
+	}
+  
+	#scatterplot g.legend text {
+	  font-size: 10px; /* Smaller text for mobile devices */
+	}
+  }
+  
