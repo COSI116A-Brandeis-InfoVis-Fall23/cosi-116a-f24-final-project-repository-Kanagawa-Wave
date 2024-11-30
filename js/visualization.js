@@ -1,26 +1,19 @@
-// Immediately Invoked Function Expression to limit access to our 
-// variables and prevent 
-((() => {
-  // TEMP: Generate Junk Data, source: https://www.w3schools.com/js/tryit.asp?filename=tryai_d3js_scatterplot
+(() => {
   const numPoints = 100;
   const xMax = 100, yMax = 100;
+  const categories = ["Urban", "Suburban", "Rural"]; 
+  const colors = ["red", "blue", "green"]; 
+  const shapes = ["circle", "triangle", "square"]; 
   let data = [];
-  for (let i = 0; i < numPoints; i++) {
-    data.push([Math.random() * xMax, Math.random() * yMax]);
-  }
 
   let margin = {
     top: 60,
     left: 100,
-    right: 70,
+    right: 100,
     bottom: 40
   },
   width = 500 - margin.left - margin.right,
-  height = 250 - margin.top - margin.bottom,
-  xValue = d => d[0],
-  yValue = d => d[1],
-  xLabelText = "Population",
-  yLabelText = "Housing Affordability Index";
+  height = 250 - margin.top - margin.bottom;
 
   let scatterplot = d3.select("#scatterplot")
     .append("svg")
@@ -31,36 +24,67 @@
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   let xScale = d3.scaleLinear()
-    .domain([
-      d3.min(data, d => xValue(d)),
-      d3.max(data, d => xValue(d))
-    ])
-    .rangeRound([0, width]);
+    .domain([0, xMax])
+    .range([0, width]);
 
   let yScale = d3.scaleLinear()
-    .domain([
-      d3.min(data, d => yValue(d)),
-      d3.max(data, d => yValue(d))
-    ])
-    .rangeRound([height, 0]);
+    .domain([0, yMax])
+    .range([height, 0]);
 
-  let xAxis = scatterplot.append("g")
-    .attr("transform", "translate(0," + (height) + ")")
+  scatterplot.selectAll(".data-point")
+    .data(data)
+    .enter()
+    .append("path")
+    .attr("d", d => {
+      const shape = shapes[categories.indexOf(d.category)];
+      if (shape === "circle") {
+        return d3.symbol().type(d3.symbolCircle).size(100)();
+      } else if (shape === "triangle") {
+        return d3.symbol().type(d3.symbolTriangle).size(100)();
+      } else if (shape === "square") {
+        return d3.symbol().type(d3.symbolSquare).size(100)();
+      }
+    })
+    .attr("transform", d => `translate(${xScale(d.x)}, ${yScale(d.y)})`)
+    .attr("fill", d => colors[categories.indexOf(d.category)]);
+
+  // Add x-axis
+  scatterplot.append("g")
+    .attr("transform", `translate(0,${height})`)
     .call(d3.axisBottom(xScale))
-    .append("text")        
+    .append("text")
     .attr("class", "axisLabel")
     .attr("x", width / 2)
     .attr("y", 30)
     .attr("text-anchor", "middle")
-    .text(xLabelText);
+    .text("Population");
 
-  let yAxis = scatterplot.append("g")
+  scatterplot.append("g")
     .call(d3.axisLeft(yScale))
     .append("text")
     .attr("class", "axisLabel")
     .attr("transform", "rotate(-90)")
     .attr("x", -height / 2)
-    .attr("y", -40)
+    .attr("y", -50)
     .attr("text-anchor", "middle")
-    .text(yLabelText);
-})());
+    .text("Housing Affordability Index");
+
+  let legend = scatterplot.append("g")
+    .attr("transform", `translate(${width + 30}, 0)`);
+
+  categories.forEach((cat, i) => {
+    legend.append("path")
+      .attr("d", d3.symbol().type(
+        i === 0 ? d3.symbolCircle : i === 1 ? d3.symbolTriangle : d3.symbolSquare
+      ).size(100)())
+      .attr("transform", `translate(10, ${i * 20})`)
+      .attr("fill", colors[i]);
+
+    legend.append("text")
+      .attr("x", 30)
+      .attr("y", i * 20 + 5)
+      .text(cat)
+      .style("font-size", "12px")
+      .attr("alignment-baseline", "middle");
+  });
+})();
