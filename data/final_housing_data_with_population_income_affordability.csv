@@ -1,4 +1,4 @@
-County Name,Median Home Price,FIPS,Population,Median Income,Housing Affordability Index
+CountyName,MedianHomePrice,FIPS,Population,MedianIncome,HousingAffordabilityIndex
 "Nantucket County, Massachusetts",1705210,25019,13795,116571,6.836166806434398
 "San Mateo County, California",1701860,6081,762488,136837,8.040438108892625
 "Santa Clara County, California",1664410,6085,1932022,140258,8.426890009072284
