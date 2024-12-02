@@ -25,14 +25,43 @@
     const mapHolder = d3.select("#map");
 
     // SVG setup
+    var mapWidth = 975;
+    var mapHeight = 610;
     const svg = mapHolder.append("svg")
-      .attr("width", 975)
-      .attr("height", 610)
+      .attr("width", mapWidth)
+      .attr("height", mapHeight)
       .attr("viewBox", "0 0 975 610")
       .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;");
 
     // Path generator
     const path = d3.geoPath();
+
+    var zoomSettings= {
+      duration: 1000,
+      ease: d3.easeCubicOut,
+      zoomLevel: 5
+    };
+
+    var centered = null;
+    function clicked(d){
+      var x;
+      var y;
+      var zoomLevel;
+      if ( d && centered !== d){
+        var centroid = path.centroid(d)
+        x = centroid[0];
+        y = centroid[1];
+        zoomLevel = zoomSettings.zoomLevel;
+        centered = d;
+        }else{
+          x  =mapWidth/2;
+          y = mapHeight/2;
+          zoomLevel = 1;
+          centered = null;
+        }
+    }
+
+    svg.transition().duration(zoomSettings.duration).ease(zoomSettings.ease).attr('transform','translate('+mapWidth/2+','+mapHeight/2+')scale('+zoomLevel+')translate('+-x+','+-y+')');
 
     // Draw counties with color based on affordability index
     svg.append("g")
@@ -41,6 +70,7 @@
       .enter().append("path")
         .attr("fill", d => color(valuemap.get(d.id)))
         .attr("d", path)
+        .attr("cursor","pointer")
         .on("mouseover", function(event, d) {
           d3.select("#tooltip")
             .style("opacity", 1)
@@ -48,11 +78,13 @@
             .style("left", (event.pageX + 10) + "px")
             .style("top", (event.pageY - 28) + "px");
         })
+        .on("click",clicked)
         .on("mouseout", function() {
           d3.select("#tooltip").style("opacity", 0);
         })
         .append("title")
           .text(d => `${d.properties.name}\nHousing Affordability Index: ${valuemap.get(d.id)}`);
+        
 
     // Draw state borders
     svg.append("path")
