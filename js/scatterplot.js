@@ -1,0 +1,182 @@
+/* global D3 */
+
+// Initialize a line chart. Modeled after Mike Bostock's
+// Reusable Chart framework https://bost.ocks.org/mike/chart/
+function scatterplot() {
+
+    // Based on Mike Bostock's margin convention
+    // https://bl.ocks.org/mbostock/3019563
+    let margin = {
+        top: 50,
+        left: 100,
+        right: 100,
+        bottom: 60
+      },
+      width = 300,
+      height = 150,
+      ourBrush = null,
+      selectableElements = d3.select(null),
+      dispatcher = null;
+  
+    // Create the chart by adding an svg to the div with the id 
+    // specified by the selector using the given data
+    function plot(selector, affordability) {
+      const categories = ["Urban", "Suburban", "Rural"]; 
+      const colors = ["red", "blue", "green"]; 
+      const shapes = ["circle", "triangle", "square"]; 
+
+      let scatterplot = d3.select(selector)
+        .append("svg")
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom].join(' '))
+        .classed("svg-content", true)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+      let xScale = d3.scaleLog()
+        .domain([200, 10020000])
+        .range([0, width])
+        .base(2);
+
+      let yScale = d3.scaleLog()
+        .domain([6, 140])
+        .range([height, 0])
+        .base(2);
+    
+      let points = scatterplot.selectAll(".data-point")
+        .data(affordability)
+        .enter()
+        .append("path")
+        .attr("d", d => {
+          const shape = shapes[categories.indexOf(d.Classification)];
+          if (shape === "circle") {
+            return d3.symbol().type(d3.symbolCircle).size(10)();
+          } else if (shape === "triangle") {
+            return d3.symbol().type(d3.symbolTriangle).size(10)();
+          } else if (shape === "square") {
+            return d3.symbol().type(d3.symbolSquare).size(10)();
+          }
+        })
+        .attr("transform", d => `translate(${xScale(d.Population)}, ${yScale(d.HousingAffordabilityIndex)})`)
+        .attr("fill", d => colors[categories.indexOf(d.Classification)])
+        // hover 
+        .on("mouseover", function (event, d) {
+          d3.select(this)
+            .attr("fill", "orange") 
+            //.attr("stroke", "black") 
+            //.attr("stroke-width", 2);
+    
+          // tooltip
+          scatterplot.append("text")
+            .attr("id", "tooltip")
+            .attr("x", xScale(d.Population) + 10)
+            .attr("y", yScale(d.HousingAffordabilityIndex) - 10)
+            .text(`(${d.Population.toFixed(1)}, ${d.HousingAffordabilityIndex.toFixed(1)})`)
+            .style("font-size", "6px")
+            .style("background-color", "white");
+        })
+        .on("mouseout", function (d) {
+          d3.select(this)
+            .attr("fill", d => colors[categories.indexOf(d.Classification)]) 
+            .attr("stroke", null); 
+    
+          d3.select("#tooltip").remove();
+        });
+
+        xAxis = scatterplot.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(xScale));
+        
+        xAxis.selectAll("text")
+            .style("font-size", "6px");
+
+        xAxis.append("text")
+            .attr("class", "axisLabel")
+            .attr("x", width / 2)
+            .attr("y", 20)
+            .attr("text-anchor", "middle")
+            .text("Population")
+            .style("font-size", "6px");
+
+        yAxis = scatterplot.append("g")
+            .call(d3.axisLeft(yScale));
+        
+        yAxis.selectAll("text")
+            .style("font-size", "6px");
+
+        yAxis.append("text")
+            .attr("class", "axisLabel")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -20)
+            .attr("text-anchor", "middle")
+            .text("Housing Affordability Index")
+            .style("font-size", "6px");
+        
+        scatterplot.selectAll(".tick line")
+            .style("stroke", "black")
+            .style("stroke-width", .5)
+
+        let legend = scatterplot.append("g")
+            .attr("transform", `translate(${width - 30}, 0)`)
+            .style("font-size", "6px");
+
+        categories.forEach((cat, i) => {
+            legend.append("path")
+            .attr("d", d3.symbol().type(
+                i === 0 ? d3.symbolCircle : i === 1 ? d3.symbolTriangle : d3.symbolSquare
+            ).size(20)())
+            .attr("transform", `translate(10, ${i * 20})`)
+            .attr("fill", colors[i]);
+
+            legend.append("text")
+            .attr("x", 15)
+            .attr("y", i * 20 + 0.5)
+            .text(cat)
+            .style("font-size", "6px")
+            .attr("alignment-baseline", "middle");
+        });
+          
+      // TODO
+      // selectableElements = ...;
+    }
+  
+    plot.margin = function (_) {
+      if (!arguments.length) return margin;
+      margin = _;
+      return plot;
+    };
+  
+    plot.width = function (_) {
+      if (!arguments.length) return width;
+      width = _;
+      return plot;
+    };
+  
+    plot.height = function (_) {
+      if (!arguments.length) return height;
+      height = _;
+      return plot;
+    };
+  
+    // Gets or sets the dispatcher we use for selection events
+    plot.selectionDispatcher = function (_) {
+      if (!arguments.length) return dispatcher;
+      dispatcher = _;
+      console.log(dispatcher)
+      return plot;
+    };
+  
+    // Given selected data from another visualization 
+    // select the relevant elements here (linking)
+    plot.updateSelection = function (selectedData) {
+      if (!arguments.length) return;
+  
+      // Select an element if its datum was selected
+      selectableElements.classed("selected", d => {
+        return selectedData.includes(d)
+      });
+    };
+  
+    return plot;
+  }
