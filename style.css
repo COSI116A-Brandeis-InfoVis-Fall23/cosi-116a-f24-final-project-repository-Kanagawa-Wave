@@ -81,3 +81,10 @@ h1, h2, h3 {
 .axisLabel {
 	fill: #475d7c;
 }
+
+/* Style for selected marks (path) */
+path.selected {
+	fill: pink;
+	stroke: red;
+	opacity: 5;
+  }

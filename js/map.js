@@ -44,37 +44,37 @@ function usmap() {
   
       const path = d3.geoPath();
 
-      var zoomSettings= {
-        duration: 1000,
-        ease: d3.easeCubicOut,
-        zoomLevel: 5
-      };
+      // var zoomSettings= {
+      //   duration: 1000,
+      //   ease: d3.easeCubicOut,
+      //   zoomLevel: 5
+      // };
   
-      // Define zoom behavior
-      const zoom = d3.zoom()
-        .scaleExtent([1, 8]) // Adjust scale extent as needed
-        .on('zoom', zoomed);
+      // // Define zoom behavior
+      // const zoom = d3.zoom()
+      //   .scaleExtent([1, 8]) // Adjust scale extent as needed
+      //   .on('zoom', zoomed);
   
-      // Apply zoom behavior to the SVG
-      svg.call(zoom);
+      // // Apply zoom behavior to the SVG
+      // svg.call(zoom);
   
-      // Zoom handler function for D3 v4
-      function zoomed() {
-        // Use d3.event.transform instead of event.transform
-        const transform = d3.event.transform;
+      // // Zoom handler function for D3 v4
+      // function zoomed() {
+      //   // Use d3.event.transform instead of event.transform
+      //   const transform = d3.event.transform;
         
-        // Apply transform to all paths
-        svg.selectAll('path')
-          .attr('transform', `translate(${transform.x},${transform.y}) scale(${transform.k})`);
+      //   // Apply transform to all paths
+      //   svg.selectAll('path')
+      //     .attr('transform', `translate(${transform.x},${transform.y}) scale(${transform.k})`);
           
-        // Apply transform to points if they exist
-        svg.selectAll('circle')
-          .attr('transform', `translate(${transform.x},${transform.y}) scale(${transform.k})`);
+      //   // Apply transform to points if they exist
+      //   svg.selectAll('circle')
+      //     .attr('transform', `translate(${transform.x},${transform.y}) scale(${transform.k})`);
           
-        // Apply transform to any other elements that need zooming
-        svg.selectAll('text')
-          .attr('transform', `translate(${transform.x},${transform.y}) scale(${transform.k})`);
-      }
+      //   // Apply transform to any other elements that need zooming
+      //   svg.selectAll('text')
+      //     .attr('transform', `translate(${transform.x},${transform.y}) scale(${transform.k})`);
+      // }
   
       // Draw counties with color based on affordability index
       svg.append("g")
@@ -191,7 +191,71 @@ function usmap() {
             .text("No Data");
           
       // TODO
-      // selectableElements = ...;
+
+      svg.call(brush)
+      selectableElements = svg.selectAll("path")
+      function brush(g) {
+          const brush = d3
+            .brush() 
+            .on("start brush", highlight) 
+            .on("end", brushEnd) 
+            .extent([
+              [-margin.left, -margin.top],
+              [width + margin.right, height + margin.bottom],
+            ]);
+    
+          ourBrush = brush;
+    
+          g.call(brush); 
+    
+          
+          function highlight() {
+              if (d3.event.selection === null) return;
+              const [
+                [x0, y0],
+                [x1, y1],
+              ] = d3.event.selection;
+              
+             
+              svg.selectAll("path").classed(
+                "selected",
+                (d) => {
+                  return x0 <= X(d) &&
+                  X(d) <= x1 &&
+                  y0 <= Y(d) &&
+                  Y(d) <= y1
+                }
+              );
+      
+            
+              let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+      
+
+              dispatcher.call(
+                dispatchString,
+                this,
+                svg.selectAll(".selected").data()
+              );
+            }
+          
+            function brushEnd() {
+              if (d3.event.sourceEvent.type != "end") {
+                d3.select(this).call(brush.move, null);
+              }
+            }
+          }
+      
+          function X(d) {
+              let centroid = path.centroid(d);
+              return centroid[0]
+          }
+      
+          function Y(d) {
+              let centroid = path.centroid(d);
+              return centroid[1]
+          }
+  
+    
     }
   
     map.margin = function (_) {

@@ -25,6 +25,14 @@
     let scatter = scatterplot()
       .selectionDispatcher(d3.dispatch(dispatchString))
       ("#scatterplot", affordability);
+      
+      
+      map.selectionDispatcher().on(dispatchString, function(selectedData) {
+        scatter.updateSelection(selectedData);
+      });
+      scatter.selectionDispatcher().on(dispatchString, function(selectedData) {
+        scatter.updateSelection(selectedData);
+      });
   }
-  
+
 })();

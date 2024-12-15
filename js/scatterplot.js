@@ -16,7 +16,7 @@ function scatterplot() {
       height = 150,
       ourBrush = null,
       selectableElements = d3.select(null),
-      dispatcher = null;
+      dispatcher;
   
     // Create the chart by adding an svg to the div with the id 
     // specified by the selector using the given data
@@ -47,6 +47,7 @@ function scatterplot() {
         .data(affordability)
         .enter()
         .append("path")
+        .attr("class", "point scatterPoint")
         .attr("d", d => {
           const shape = shapes[categories.indexOf(d.Classification)];
           if (shape === "circle") {
@@ -139,6 +140,52 @@ function scatterplot() {
           
       // TODO
       // selectableElements = ...;
+      selectableElements = points
+      scatterplot.call(brush);
+      // Highlight points when brushed
+    function brush(g) {
+      const brush = d3.brush() // Create a 2D interactive brush
+        .on("start brush", highlight) // When the brush starts/continues do...
+        .on("end", brushEnd) // When the brush ends do...
+        .extent([
+          [-margin.left, -margin.bottom],
+          [width + margin.right, height + margin.top]
+        ]);
+        
+      ourBrush = brush;
+
+      g.call(brush); // Adds the brush to this element
+
+      // Highlight the selected circles
+      function highlight() {
+        if (d3.event.selection === null) return;
+        const [
+          [x0, y0],
+          [x1, y1]
+        ] = d3.event.selection;
+
+        // If within the bounds of the brush, select it
+        points.classed("selected", d =>
+          x0 <= xScale(d.Population) && xScale(d.Population) <= x1 && 
+          y0 <= yScale(d.HousingAffordabilityIndex) && yScale(d.HousingAffordabilityIndex) <= y1
+      );
+
+        // Get the name of our dispatcher's event
+        let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+
+        // Let other charts know about our selection
+        dispatcher.call(dispatchString, this, points.selectAll(".selected").data());
+      }
+      
+      function brushEnd(){
+        // We don't want infinite recursion
+        if(d3.event.sourceEvent.type!="end"){
+          d3.select(this).call(brush.move, null);
+        }         
+      }
+    }
+
+    return plot;
     }
   
     plot.margin = function (_) {
