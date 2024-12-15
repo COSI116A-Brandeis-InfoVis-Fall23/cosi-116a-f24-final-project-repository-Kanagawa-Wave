@@ -16,6 +16,11 @@
   function ready(error, affordability, us) {
     if (error) throw error;
 
+    affordability.forEach(d => {
+      d.FIPS = String(d.FIPS).padStart(5, '0'); // Pad with leading zeros if necessary
+      d.HousingAffordabilityIndex = +d.HousingAffordabilityIndex; // Ensure the value is a number
+    });
+
     const dispatchString = "selectionUpdated";
 
     let map = usmap()
@@ -31,7 +36,7 @@
         scatter.updateSelection(selectedData);
       });
       scatter.selectionDispatcher().on(dispatchString, function(selectedData) {
-        scatter.updateSelection(selectedData);
+        map.updateSelection(selectedData);
       });
   }
 

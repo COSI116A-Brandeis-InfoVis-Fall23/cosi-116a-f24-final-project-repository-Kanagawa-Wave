@@ -43,46 +43,27 @@ function scatterplot() {
         .range([height, 0])
         .base(2);
     
-      let points = scatterplot.selectAll(".data-point")
-        .data(affordability)
-        .enter()
+      let points = scatterplot.append("g")
+        .selectAll(".scatterPoint")
+        .data(affordability);
+      
+      points.exit().remove();
+        
+      points = points.enter()
         .append("path")
         .attr("class", "point scatterPoint")
         .attr("d", d => {
           const shape = shapes[categories.indexOf(d.Classification)];
           if (shape === "circle") {
-            return d3.symbol().type(d3.symbolCircle).size(10)();
+            return d3.symbol().type(d3.symbolCircle).size(5)();
           } else if (shape === "triangle") {
-            return d3.symbol().type(d3.symbolTriangle).size(10)();
+            return d3.symbol().type(d3.symbolTriangle).size(5)();
           } else if (shape === "square") {
-            return d3.symbol().type(d3.symbolSquare).size(10)();
+            return d3.symbol().type(d3.symbolSquare).size(5)();
           }
         })
         .attr("transform", d => `translate(${xScale(d.Population)}, ${yScale(d.HousingAffordabilityIndex)})`)
         .attr("fill", d => colors[categories.indexOf(d.Classification)])
-        // hover 
-        .on("mouseover", function (event, d) {
-          d3.select(this)
-            .attr("fill", "orange") 
-            //.attr("stroke", "black") 
-            //.attr("stroke-width", 2);
-    
-          // tooltip
-          scatterplot.append("text")
-            .attr("id", "tooltip")
-            .attr("x", xScale(d.Population) + 10)
-            .attr("y", yScale(d.HousingAffordabilityIndex) - 10)
-            .text(`(${d.Population.toFixed(1)}, ${d.HousingAffordabilityIndex.toFixed(1)})`)
-            .style("font-size", "6px")
-            .style("background-color", "white");
-        })
-        .on("mouseout", function (d) {
-          d3.select(this)
-            .attr("fill", d => colors[categories.indexOf(d.Classification)]) 
-            .attr("stroke", null); 
-    
-          d3.select("#tooltip").remove();
-        });
 
         xAxis = scatterplot.append("g")
             .attr("transform", `translate(0,${height})`)
@@ -135,12 +116,13 @@ function scatterplot() {
             .attr("y", i * 20 + 0.5)
             .text(cat)
             .style("font-size", "6px")
+            .style("fill", "black")
             .attr("alignment-baseline", "middle");
         });
           
       // TODO
       // selectableElements = ...;
-      selectableElements = points
+      selectableElements = scatterplot.selectAll(".scatterPoint")
       scatterplot.call(brush);
       // Highlight points when brushed
     function brush(g) {
@@ -165,7 +147,7 @@ function scatterplot() {
         ] = d3.event.selection;
 
         // If within the bounds of the brush, select it
-        points.classed("selected", d =>
+        scatterplot.selectAll(".scatterPoint").classed("selected", d =>
           x0 <= xScale(d.Population) && xScale(d.Population) <= x1 && 
           y0 <= yScale(d.HousingAffordabilityIndex) && yScale(d.HousingAffordabilityIndex) <= y1
       );
@@ -174,7 +156,8 @@ function scatterplot() {
         let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
 
         // Let other charts know about our selection
-        dispatcher.call(dispatchString, this, points.selectAll(".selected").data());
+        dispatcher.call(dispatchString, this, scatterplot.selectAll(".scatterPoint.selected").data());
+        console.log(scatterplot.selectAll(".scatterPoint.selected").data())
       }
       
       function brushEnd(){
@@ -210,7 +193,6 @@ function scatterplot() {
     plot.selectionDispatcher = function (_) {
       if (!arguments.length) return dispatcher;
       dispatcher = _;
-      console.log(dispatcher)
       return plot;
     };
   
@@ -218,10 +200,13 @@ function scatterplot() {
     // select the relevant elements here (linking)
     plot.updateSelection = function (selectedData) {
       if (!arguments.length) return;
-  
-      // Select an element if its datum was selected
+
+      const selectedIDs = new Set(selectedData.map(d => d.id));
+      console.log(selectedIDs)
+      
       selectableElements.classed("selected", d => {
-        return selectedData.includes(d)
+
+        return selectedIDs.has(d.FIPS);
       });
     };
   

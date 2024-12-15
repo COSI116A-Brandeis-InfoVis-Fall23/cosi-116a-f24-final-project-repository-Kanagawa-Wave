@@ -83,8 +83,30 @@ h1, h2, h3 {
 }
 
 /* Style for selected marks (path) */
+
 path.selected {
-	fill: pink;
-	stroke: red;
+	fill: yellow;
+    stroke: black;
+	stroke-width: 0.1px;
 	opacity: 5;
-  }
+}
+
+.county {
+	fill: grey; /* Default for counties without data */
+	stroke: #fff;
+	stroke-width: 0.7px;
+}
+
+.county.has-data {
+	fill: none; /* Ensure default is overridden dynamically */
+	stroke: #fff;
+	stroke-width: 0.7px;
+}
+
+.county.mouseover {
+	opacity: 0.5;
+}
+
+.county.selected {
+	opacity: 1;
+}
