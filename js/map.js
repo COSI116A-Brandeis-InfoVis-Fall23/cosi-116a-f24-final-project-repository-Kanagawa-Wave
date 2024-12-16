@@ -16,7 +16,10 @@ function usmap() {
       height = 610,
       ourBrush = null,
       selectableElements = d3.select(null),
+      valuemap = null,
+      color = null,
       dispatcher = null;
+
   
     // Create the chart by adding an svg to the div with the id 
     // specified by the selector using the given data
@@ -33,9 +36,9 @@ function usmap() {
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       // Map FIPS codes to Housing Affordability Index
-      const valuemap = new Map(affordability.map(d => [d.FIPS, +d.HousingAffordabilityIndex]));
+      valuemap = new Map(affordability.map(d => [d.FIPS, +d.HousingAffordabilityIndex]));
 
-      const color = d3.scaleQuantize()
+      color = d3.scaleQuantize()
       .domain([0, 50])
       .range([
       "#67000d", "#a50f15", "#cb181d", "#ef3b2c", 
@@ -218,7 +221,9 @@ function usmap() {
             .attr("y", 35)
             .style("font-size", "12px")
             .text("No Data");
-      selectableElements = svg.selectAll(".counties");
+      selectableElements = svg.selectAll(".county");
+      console.log(selectableElements)
+
 
       return map;
     }
@@ -254,6 +259,7 @@ function usmap() {
       if (!arguments.length) return;
       const selectedFIPs = selectedData.map(d => d.FIPS);
       console.log(selectedFIPs)
+      console.log(selectableElements)
       // Select an element if its datum was selected
       selectableElements.classed("selected", d => {
         return selectedFIPs.includes(d.id);
