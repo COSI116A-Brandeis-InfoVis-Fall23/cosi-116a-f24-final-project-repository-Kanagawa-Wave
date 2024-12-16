@@ -9,9 +9,9 @@
   // "Santa Clara County, California",1664410,6085,1932022,140258,8.426890009072284
 
   d3.queue()
-  .defer(d3.csv, "data/final_dataset.csv")
-  .defer(d3.json, "data/counties-albers-10m.json")
-  .await(ready);
+    .defer(d3.csv, "data/final_dataset.csv")
+    .defer(d3.json, "data/counties-albers-10m.json")
+    .await(ready);
 
   function ready(error, affordability, us) {
     if (error) throw error;
@@ -30,14 +30,14 @@
     let scatter = scatterplot()
       .selectionDispatcher(d3.dispatch(dispatchString))
       ("#scatterplot", affordability);
-      
-      
-      map.selectionDispatcher().on(dispatchString, function(selectedData) {
-        scatter.updateSelection(selectedData);
-      });
-      scatter.selectionDispatcher().on(dispatchString, function(selectedData) {
-        map.updateSelection(selectedData);
-      });
+
+
+    map.selectionDispatcher().on(dispatchString, function (selectedData) {
+      scatter.updateSelection(selectedData);
+    });
+    scatter.selectionDispatcher().on(dispatchString, function (selectedData) {
+      map.updateSelection(selectedData);
+    });
   }
 
 })();
