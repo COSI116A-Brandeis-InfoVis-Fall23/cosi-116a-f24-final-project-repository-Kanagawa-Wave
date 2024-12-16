@@ -2,6 +2,9 @@
 
 // Initialize a line chart. Modeled after Mike Bostock's
 // Reusable Chart framework https://bost.ocks.org/mike/chart/
+
+// Some code snippets generated or inspired by ChatGPT
+
 function usmap() {
 
     // Based on Mike Bostock's margin convention
@@ -81,6 +84,27 @@ function usmap() {
   
       var isMouseDown = false;
 
+      d3.select(selector).on('mouseup', function(event, d) {
+        if (d3.event.button === 0) {
+          isMouseDown = false;
+        }
+      }).on('mousedown', function(event, d) {
+        if (d3.event.button === 0) {
+          console.log(this)
+          if (!isMouseDown) {
+              svg.selectAll("path").classed("selected", false)
+              .classed("mouseover", false)
+              .classed("has-data", d => valuemap.get(d.id) !== undefined)
+              .style("fill", d => {
+                  const value = valuemap.get(d.id);
+                  return value !== undefined ? color(value) : "grey";
+              });
+              let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+              dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
+          }
+        }
+      });
+
       let counties = svg.append("g")
                         .selectAll("path");
       counties
@@ -97,44 +121,57 @@ function usmap() {
       .on('mouseup', function(event, d) {
         if (d3.event.button === 0) {
           isMouseDown = false;
-          console.log(isMouseDown)
         }
       })
       .on('mousedown', function(event, d) {
         if (d3.event.button === 0) {
+          console.log(this)
           if (!isMouseDown) {
               svg.selectAll("path").classed("selected", false)
               .classed("mouseover", false)
               .classed("has-data", d => valuemap.get(d.id) !== undefined)
-                  .style("fill", d => {
-                      const value = valuemap.get(d.id);
-                      return value !== undefined ? color(value) : "grey";
-                  });
+              .style("fill", d => {
+                  const value = valuemap.get(d.id);
+                  return value !== undefined ? color(value) : "grey";
+              });
           }
           isMouseDown = true;
           d3.select(this).classed('selected', true)
-              .style("fill", "yellow")
-              .style("stroke", "#fff");
+          .style("fill", "yellow")
+          .style("stroke", "#fff");
+          let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+          dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
         }
       })
       .on("mouseover", function(event, d) {
           d3.select(this).classed('mouseover', true);
           if (isMouseDown) {
               d3.select(this).classed('selected', true)
-                  .style("fill", "yellow")
-                  .style("stroke", "#fff");
+              .style("fill", "yellow")
+              .style("stroke", "#fff");
               let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
               dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
-              //console.log(svg.selectAll(".selected").data())
           }
   
           const value = valuemap.get(d.id);
           if (value !== undefined) {
-              d3.select("#tooltip")
-                  .style("opacity", 1)
-                  .html(`${d.properties.name}<br>Index: ${value.toFixed(2)}`)
-                  .style("left", (event.pageX + 10) + "px")  // Use event instead of d3.event
-                  .style("top", (event.pageY - 28) + "px");
+            const data = affordability.find(entry => entry.FIPS === d.id);
+            if (data) {
+                // Construct tooltip content with additional fields
+                const tooltipContent = `
+                    <strong>${data.CountyName || "Unknown County"}</strong><br>
+                    FIPS: ${data.FIPS}<br>
+                    Housing Affordability Index: ${value.toFixed(2)}<br>
+                    Median Home Price: $${data.MedianHomePrice.toLocaleString()}<br>
+                    Median Income: $${data.MedianIncome.toLocaleString()}<br>
+                    Population: ${data.Population.toLocaleString()}
+                `;
+                d3.select("#tooltip")
+                    .style("opacity", 1)
+                    .html(tooltipContent)
+                    .style("left", (event.pageX + 10) + "px") // Use event instead of d3.event
+                    .style("top", (event.pageY - 28) + "px");
+            }
           }
       })
       .on("mouseout", function() {
@@ -142,7 +179,24 @@ function usmap() {
           d3.select("#tooltip").style("opacity", 0);
       })
       .append("title")
-      .text(d => `${d.properties.name}\nHousing Affordability Index: ${valuemap.get(d.id)}`);
+      .text(d => {
+        const value = valuemap.get(d.id);
+        if (value !== undefined) {
+            // Lookup additional fields in the affordability dataset
+            const data = affordability.find(entry => entry.FIPS === d.id);
+            if (data) {
+                // Format the title with new fields
+                return `
+                    ${data.CountyName || "Unknown County"}
+                    Housing Affordability Index: ${value.toFixed(2)}
+                    Median Home Price: $${data.MedianHomePrice.toLocaleString()}
+                    Median Income: $${data.MedianIncome.toLocaleString()}
+                    Population: ${data.Population.toLocaleString()}
+                `;
+            }
+        }
+        return "No Data";
+    });
   
       // Add tooltip
       d3.select("body").append("div")

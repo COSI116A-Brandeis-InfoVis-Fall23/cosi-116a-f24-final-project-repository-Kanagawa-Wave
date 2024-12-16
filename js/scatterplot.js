@@ -2,6 +2,8 @@
 
 // Initialize a line chart. Modeled after Mike Bostock's
 // Reusable Chart framework https://bost.ocks.org/mike/chart/
+
+// Some code snippets generated or inspired by ChatGPT
 function scatterplot() {
 
     // Based on Mike Bostock's margin convention
