@@ -35,7 +35,7 @@
   <!-- Your writeup goes here -->
   <div class="content-column">
 
-    <h1>Project Team #15: How has housing affordability changed across different regions in US, COSI 116A F23</h1>
+    <h1>Project Team #15: How has housing affordability changed across different regions in US, COSI 116A F24</h1>
 
     <p><strong>Ben Lu</strong>, <strong>Ben Zhang</strong>, <strong>Qianyong Zhang</strong></p>
 
@@ -64,13 +64,10 @@
         to see clear trends or important findings of this problem from the visualizations on a more zoom-in level.
       </em></p>
 
-    <p><em>Expectation: There is a clear focus, and a developed explanation of the problem, and a reasonable response is
-        proposed.</em></p>
 
 
     <h1>Visualization</h1>
 
-    <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
 
   </div>
 
@@ -88,21 +85,54 @@
 
     <h1>Demo Video</h1>
 
-    <p><em>Embedded MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody
-        Dunne made of Mike Bostock's flexible transitions in D3 slide:</em></p>
 
-    <video controls width="100%">
-      <source src="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4" type="video/mp4">
-      <p>Your browser doesn't support HTML5 video. Here is
-        a <a href="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4">link to the video</a>
-        instead.</p>
-    </video>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video Embed Example</title>
+    </head>
+    <body>
+      
+
+        <!-- Embedding the video -->
+        <video width="640" height="360" controls>
+            <source src="DemoVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+    </body>
+    </html>
+
 
     <h1>Visualization explanation</h1>
     <p><em>The project includes two key visualizations: a U.S. map and a scatterplot, both created using D3.js. The project includes two key visualizations: a U.S. map and a scatterplot, both created using D3.js. The U.S. map visualizes housing affordability at the county level using a sequential red color scheme to indicate varying affordability levels. Counties with missing data are marked in grey for clarity. The scatterplot encodes affordability and population, using the x-axis for population, the y-axis for housing affordability index, and distinct shapes (circle, triangle, square) to differentiate area types: urban, suburban, and rural.</em>
     <p><em>Interactions, such as brushing and linking, allow users to highlight selected data points on both visualizations simultaneously. Zoom functionality on the map further enhances user experience by enabling exploration of specific regions. </em>
-    <p><em>Final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation
-        slides.</em></p>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Embed Image Example</title>
+      </head>
+      <body>
+        <p><em>Final Visualization Screenshots</em></p>
+      
+          
+      
+          <!-- Image in images subfolder -->
+          <img src="images/vis1.png" alt="Another sample image" style="width:100%;">
+          
+          <img src="images/vis2.png" alt="Another sample image" style="width:100%;">
+      
+          
+      
+      </body>
+      </html>
+    
+    <p><em>Linked Presentation Slides</em></p>
+    <p><em>https://docs.google.com/presentation/d/1csHt2YlLi2M3oCcygLNsrSwXPSjvIF7Y3qPR58ABtr8/edit?usp=sharing</em></p>
 
     <h1>Data Analysis</h1>
     <p><em>The data sources for this project are well-documented and aligned with the problem statement. The primary dataset includes housing affordability index, population, median income, and area type classifications for various U.S. counties. The FIPS codes are used to uniquely identify counties and link them to the geographic data provided in counties-albers-10m.json. The housing data was cleaned using Python librarie pandas.</em></p>
@@ -111,36 +141,48 @@
     <p><em>2.Combining affordability data with population and area type information to create a unified dataset.</em></p>
     <p><em>3.Exporting cleaned data in both CSV (final_dataset.csv) and JSON formats for seamless integration into D3 visualizations.</em></p>
     <p><em>These steps ensure that the data is clean, reproducible, and appropriate for the project goals. The preprocessing workflow is explicitly documented in the data-process.ipynb file.</em></p>
-    <p><em>Summary of data, data types, and data preprocessing.</em></p>
+    
 
-    <p><em>Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very
-        explicit so someone could read your page and properly reproduce your results.</em></p>
+
 
     <h1>Task Analysis</h1>
-
-    <p><em>Summary of task table.</em></p>
-
-    <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em>
+    <p><em>The task analysis for this project focuses on enabling users to explore housing affordability patterns across different U.S. regions and area classifications, such as urban, suburban, and rural areas. The tasks are structured into domain tasks, analytic tasks (low-level), search tasks (mid-level), and analyze tasks (high-level), ensuring a systematic approach to understanding the data.</em></p>
+    <p><em>The first major domain task is to compare housing affordability between different U.S. regions. At the analytic task level, the project aggregates housing affordability index data to calculate summary statistics for counties and states. This aggregation ensures that affordability patterns can be examined across regions, simplifying the process for further analysis. At the search task level, users are enabled to compare affordability visually by observing a color-coded U.S. map, where a sequential red color scheme indicates varying levels of affordability. Users can quickly identify regions with higher or lower affordability through color intensity. At the analyze task level, the map allows users to discover broader trends and patterns, such as identifying states or counties with particularly low affordability. This may prompt further investigation into possible contributing factors, such as population density or income disparities.</em></p>
+    <p><em>The second domain task focuses on comparing housing affordability across urban, suburban, and rural areas. At the analytic task level, the project filters the dataset based on area classifications, grouping the data into urban, suburban, and rural categories for analysis. At the search task level, a scatterplot visualization enables users to observe affordability differences across these categories. The scatterplot encodes area types using distinct shapes: circles represent urban areas, triangles represent suburban areas, and squares represent rural areas. These shapes, combined with population data on the x-axis and affordability index on the y-axis, allow users to identify patterns across classifications. At the analyze task level, users can discover relationships and trends, such as whether urban areas tend to have lower affordability or whether rural areas exhibit significant variability. By interacting with the scatterplot and observing the linked map, users can further explore relationships between affordability, population size, and regional location.</em></p>
+    
     </p>
 
     <h1>Design Process</h1>
     <p><em>The design process for this project involved iterative development, starting with initial sketches and progressing through several refinements. Early designs featured a simple U.S. map and scatterplot, interactivity is incorporated later.</em></p>
     <p><em>The color scheme for the map uses sequential red hues to represent affordability levels, with grey used for missing data, ensuring clarity and accessibility. The scatterplot employs distinct shapes—circles, triangles, and squares—to encode urban, suburban, and rural classifications.</em></p>
-    <p><em>Interactivity was implemented to enhance the user experience. Brushing and linking allows users to select data points on one visualization and see corresponding highlights on the other, fostering dynamic exploration. Zoom functionality was added to the map to allow detailed examination of specific regions. Learning from feedback from usability testing, we recognizes the need for clearer legends and improved interactivity, leading to refinements such as aligning legends and improving visual transitions during brushing.</em></p>
+    <p><em>Interactivity was implemented to enhance the user experience. Brushing and linking allows users to select data points on one visualization and see corresponding highlights on the other, fostering dynamic exploration. When the user hover the mouse over a data point, the interactive map displays the detailed data. In addition, zoom functionality was added to the map to allow detailed examination of specific regions. Learning from feedback from usability testing, we recognizes the need for clearer legends and improved interactivity, leading to refinements such as aligning legends and improving visual transitions during brushing.</em></p>
     <p><em>The design choices are grounded in visualization principles taught in class. This ensures that the final product effectively communicates insights while maintaining usability and accessibility.</em></p>
-    <p><em>Sketches and design choices to justify final visualization.</em></p>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Embed Image Example</title>
+    </head>
+    <body>
+        
+        <p><em>Sketches to justify final visualization</em>
 
-    <p><em>Expectation: Evidence of iterative improvement.
-        Logical discussion of design choices grounded in theory from course.
-        Discusses feedback from usability testing.</em></p>
+        <img src="images/sketch1.png" alt="Another sample image" style="width:100%;">
+        <img src="images/sketch2.png" alt="Another sample image" style="width:100%;">
+
+
+    </body>
+    </html>
+
+  
 
 
     <h1>Conclusion</h1>
     <p><em>This project successfully visualizes housing affordability trends across the United States. Our project provides valuable insights into regional and demographic disparities. The final deliverables include an interactive U.S. map, a scatterplot, and integrated brushing and linking features, allowing users to dynamically explore relationships between affordability, population, and area type.</em></p>
-    <p><em>这段要改Areas for improvement include enhancing the precision of the zoom feature for the map and implementing additional filters for state-specific or income-based analysis. Future work could incorporate historical data to analyze trends over time, providing a richer understanding of changes in housing affordability. Overall, this project demonstrates a strong integration of data analysis, design principles, and interactivity to address a critical real-world problem.</em></p>
-    <p><em>Short summary of work completed and areas for improvement/future-work.</em></p>
-
-    <p><em>Expectation: Meaningfully wraps up project and has good future directions.</em></p>
+    <p><em>Areas for improvement include enhancing the precision of the zoom feature for the map, allowing users to explore specific regions in detail. Future work could incorporate historical data to analyze trends over time, providing a richer understanding of changes in housing affordability. Overall, this project demonstrates a strong integration of data analysis, design principles, and interactivity to address a critical real-world problem.</em></p>
+    
 
 
     <h1>Acknowledgments</h1>
@@ -151,7 +193,7 @@
     <p><em>Tools:</em>
     <p><em>Python (pandas, json) for preprocessing</em>
     <p><em>Excel for initial data inspection</em>
-    <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em>
+  
     </p>
 
     <ul>
