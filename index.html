@@ -98,7 +98,7 @@
 
         <!-- Embedding the video -->
         <video width="640" height="360" controls>
-            <source src="DemoVideo.mp4" type="video/mp4">
+            <source src="files/DemoVideo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -135,6 +135,7 @@
     <p><em>https://docs.google.com/presentation/d/1csHt2YlLi2M3oCcygLNsrSwXPSjvIF7Y3qPR58ABtr8/edit?usp=sharing</em></p>
 
     <h1>Data Analysis</h1>
+    <p><em>The main data source for this project is the US Census Data, all data is gathered and compiled using the US Census Public API.</em></p>
     <p><em>The data sources for this project are well-documented and aligned with the problem statement. The primary dataset includes housing affordability index, population, median income, and area type classifications for various U.S. counties. The FIPS codes are used to uniquely identify counties and link them to the geographic data provided in counties-albers-10m.json. The housing data was cleaned using Python librarie pandas.</em></p>
     <p><em>Key processing tasks includes:</em></p>
     <p><em>1.Padding FIPS codes to ensure consistency.</em></p>
@@ -146,6 +147,33 @@
 
 
     <h1>Task Analysis</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Index (ID #)</th>
+          <th>Domain Task</th>
+          <th>Analytic Task (Low-level)</th>
+          <th>Search Task (Mid-level)</th>
+          <th>Analyze Task (High-level)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Compare affordability between different U.S. regions.</td>
+          <td>Aggregate</td>
+          <td>Compare</td>
+          <td>Discover</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Compare affordability across urban, suburban and rural areas</td>
+          <td>Compare</td>
+          <td>Filter</td>
+          <td>Discover</td>
+        </tr>
+      </tbody>
+    </table>
     <p><em>The task analysis for this project focuses on enabling users to explore housing affordability patterns across different U.S. regions and area classifications, such as urban, suburban, and rural areas. The tasks are structured into domain tasks, analytic tasks (low-level), search tasks (mid-level), and analyze tasks (high-level), ensuring a systematic approach to understanding the data.</em></p>
     <p><em>The first major domain task is to compare housing affordability between different U.S. regions. At the analytic task level, the project aggregates housing affordability index data to calculate summary statistics for counties and states. This aggregation ensures that affordability patterns can be examined across regions, simplifying the process for further analysis. At the search task level, users are enabled to compare affordability visually by observing a color-coded U.S. map, where a sequential red color scheme indicates varying levels of affordability. Users can quickly identify regions with higher or lower affordability through color intensity. At the analyze task level, the map allows users to discover broader trends and patterns, such as identifying states or counties with particularly low affordability. This may prompt further investigation into possible contributing factors, such as population density or income disparities.</em></p>
     <p><em>The second domain task focuses on comparing housing affordability across urban, suburban, and rural areas. At the analytic task level, the project filters the dataset based on area classifications, grouping the data into urban, suburban, and rural categories for analysis. At the search task level, a scatterplot visualization enables users to observe affordability differences across these categories. The scatterplot encodes area types using distinct shapes: circles represent urban areas, triangles represent suburban areas, and squares represent rural areas. These shapes, combined with population data on the x-axis and affordability index on the y-axis, allow users to identify patterns across classifications. At the analyze task level, users can discover relationships and trends, such as whether urban areas tend to have lower affordability or whether rural areas exhibit significant variability. By interacting with the scatterplot and observing the linked map, users can further explore relationships between affordability, population size, and regional location.</em></p>
@@ -181,7 +209,7 @@
 
     <h1>Conclusion</h1>
     <p><em>This project successfully visualizes housing affordability trends across the United States. Our project provides valuable insights into regional and demographic disparities. The final deliverables include an interactive U.S. map, a scatterplot, and integrated brushing and linking features, allowing users to dynamically explore relationships between affordability, population, and area type.</em></p>
-    <p><em>Areas for improvement include enhancing the precision of the zoom feature for the map, allowing users to explore specific regions in detail. Future work could incorporate historical data to analyze trends over time, providing a richer understanding of changes in housing affordability. Overall, this project demonstrates a strong integration of data analysis, design principles, and interactivity to address a critical real-world problem.</em></p>
+    <p><em>Areas for improvement include enhancing the precision of the zoom feature for the map, allowing users to explore specific regions in detail. Also, it will also be more user friendly to implement zoom for the scatterplot as this will greatly resolve the current visibility issue with densely clustered datapoints. Future work could incorporate historical data to analyze trends over time, providing a richer understanding of changes in housing affordability. Overall, this project demonstrates a strong integration of data analysis, design principles, and interactivity to address a critical real-world problem.</em></p>
     
 
 
